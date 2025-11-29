@@ -67,7 +67,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                 leading: Checkbox(
                   value: todo.isDone,
                   onChanged: (value) {
-                    todoProvider.toggleDone(index);
+                    todoProvider.toggleDone(todo.id, todo.isDone);
                   },
                 ),
                 title: Text(
@@ -80,7 +80,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
                 trailing: IconButton(
                   icon: const Icon(Icons.delete),
                   onPressed: () {
-                    todoProvider.deleteTodo(index);
+                    todoProvider.deleteTodo(todo.id);
                   },
                 ),
               );
